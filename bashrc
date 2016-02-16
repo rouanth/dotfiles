@@ -144,5 +144,3 @@ else
         export BROWSER="lynx"
         alias mplayer='mplayer -vo fbdev2 -fs -really-quiet'
 fi
-
-export RUST_SRC_PATH=$HOME/.rustc/src
