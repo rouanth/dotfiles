@@ -1,4 +1,4 @@
-DOTFILES=bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc
+DOTFILES=bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc
 
 PERSONAL_DOTFILES=$(addprefix ${HOME}/., $(DOTFILES))
 TEMPL_DIR=${HOME}/.dotfile_templates/

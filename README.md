@@ -6,6 +6,7 @@ A collection of configuration files for various utility programs.
 Currently available are the templates:
 
    * .bashrc
+   * .inputrc
    * .lynxrc
    * .muttrc
    * .nethackrc
