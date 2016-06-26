@@ -3,7 +3,7 @@
 
 A collection of configuration files for various utility programs.
 
-Currently available are the templates:
+Currently available are those:
 
    * .bashrc
    * .inputrc
@@ -21,11 +21,16 @@ In order to install the templates, issue the command
 
     make install
 
+If during the installation some files are to be overridden, the old ones are
+preserved with prefix `.backup`.
+
 Overriding the defaults
 -----------------------
 
-To use the repository without modification and still have some specific parts
-of configuration added, the user should create `.dotfile_templates` and add
-files with suffix `.pre` or `.post` and the names corresponding to those in
-the repository. And example of such file is
-`$HOME/.dotfile_templates/bashrc.post`
+For some programs it's sensible to have special configurations on different
+machines. Luckily, most of them support modularity of configuration files.
+
+   * .bashrc loads .bashrc.local if it's present
+   * .muttrc expects .muttrc.local
+   * .tmux.conf expects .tmux.session.conf
+

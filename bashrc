@@ -1,19 +1,7 @@
 set -o vi
-bind 'set show-mode-in-prompt on'
-bind 'set colored-stats on'
-
-bind '"\e[A": history-search-backward'
-bind '"\e[B": history-search-forward'
 
 [ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
 [ -f /etc/bash_completion ] && . /etc/bash_completion
-bind '"\t": menu-complete'
-bind '"\e[Z": menu-complete-reverse'
-# bind 'set menu-complete-display-prefix on'
-bind 'set show-all-if-ambiguous on'
-bind 'set visible-stats on'
-
-bind 'set revert-all-at-newline'
 
 alias ls='ls -p --color=auto'
 alias grep='grep --color=auto'
@@ -144,3 +132,8 @@ else
         export BROWSER="lynx"
         alias mplayer='mplayer -vo fbdev2 -fs -really-quiet'
 fi
+
+if [ -r ~/'.bashrc.local' ]; then
+        . ~/'.bashrc.local'
+fi
+

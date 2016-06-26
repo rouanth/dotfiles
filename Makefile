@@ -1,13 +1,14 @@
-DOTFILES=bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc
+DOTFILES = bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc
+DIR = $(DESTDIR)${HOME}
 
-PERSONAL_DOTFILES=$(addprefix ${HOME}/., $(DOTFILES))
-TEMPL_DIR=${HOME}/.dotfile_templates/
+INSTALLED_FILES = $(addprefix $(DIR)/., $(DOTFILES))
+BACKUPS = $(addsuffix .backup, $(INSTALLED_FILES))
 
-install: $(PERSONAL_DOTFILES)
+install: $(INSTALLED_FILES)
 
-${HOME}/.% : %
-	if [ -e "$@" ]; then mv -f $@ $@.backup; fi
-	for file in "$(TEMPL_DIR)$<.pre" "$<" "$(TEMPL_DIR)$<.post"; do \
-	        if [ -e "$$file" ]; then cat $$file >> $@; fi; done
+$(DIR)/.% : %
+	@ if [ -e '$@' ] && ! diff -q '$@' '$^' > /dev/null; then \
+	     	mv -v $@ $@.backup; fi
+	@ ln -vsf '$(CURDIR)/$^' '$@'
 
 .PHONY: install clean

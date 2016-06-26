@@ -41,14 +41,6 @@ set sort=threads
 
 set editor=`echo \$EDITOR`
 
-# Mailboxes
-
-mailboxes "=.arch"
-mailboxes "=.2ch"
-mailboxes "=.sent"
-mailboxes "=.drafts"
-mailboxes "=.personal"
-
 # Palette for use with the Linux console.  Black background.
 
 color hdrdefault blue black
@@ -176,5 +168,7 @@ bind index,pager p previous-undeleted
 bind index,pager N next-unread
 bind index,pager P previous-unread
 # }}}
+
+source ~/.muttrc.local
 
 # vim: ft=muttrc

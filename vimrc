@@ -78,7 +78,6 @@ set keymap=russian-jcukenwin
 set spelllang=ru_yo,en
 set iminsert=0
 set imsearch=0
-highlight lCursor guifg=None guibg=Cyan
 
 set colorcolumn=79
 set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЁ;ABCDEFGHIJKLMNOPQRSTUVWXYZ~,фисвуапршолдьтщзйкыегмцчняё;abcdefghijklmnopqrstuvwxyz`
