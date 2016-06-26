@@ -1,10 +1,10 @@
-set -o vi
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+        . /usr/share/bash-completion/bash_completion
+fi
 
-[ -f /usr/share/bash-completion/bash_completion ] && . /usr/share/bash-completion/bash_completion
-[ -f /etc/bash_completion ] && . /etc/bash_completion
-
-alias ls='ls -p --color=auto'
-alias grep='grep --color=auto'
+if [ -f /etc/bash_completion ]; then
+        . /etc/bash_completion
+fi
 
 ##### COLOR LIST #############################################################
 
@@ -81,7 +81,31 @@ On_IPurple='\e[0;105m'  # Purple
 On_ICyan='\e[0;106m'    # Cyan
 On_IWhite='\e[0;107m'   # White
 
-##############################################################################
+##### PROMPT #################################################################
+
+function generatePrompt {
+        ERR=$?
+        if [[ "$EUID" -eq 0 ]]; then
+        	arrowColor="\[$BRed\]"
+        	hostColor="\[$Purple\]"
+        else
+        	arrowColor="\[$BBlue\]"
+        	hostColor="\[$Cyan\]"
+        fi
+        
+        PS1="$arrowColor( $hostColor\h\[$Color_Off\] : \[$Green\]\W "
+        if [[ $ERR = "0" ]]; then
+        	PS1+="$arrowColor)"
+        else
+        	PS1+="\[$BPurple\]€$arrowColor"
+        fi
+        
+        PS1+="→ \[$Color_Off\]"
+}
+
+PROMPT_COMMAND="generatePrompt"
+
+##### ALIASES ################################################################
 
 man() {
     env LESS_TERMCAP_mb=$'\E[01;31m' \
@@ -94,34 +118,13 @@ man() {
     man "$@"
 }
 
-##############################################################################
-
-function generatePrompt {
-ERR=$?
-if [[ `whoami` = "root" ]]; then
-	arrowColor="\[$BRed\]"
-	hostColor="\[$Purple\]"
-else
-	arrowColor="\[$BBlue\]"
-	hostColor="\[$Cyan\]"
-fi
-
-PS1="$arrowColor( $hostColor\h\[$Color_Off\] : \[$Green\]\W "
-if [[ $ERR = "0" ]]; then
-	PS1+="$arrowColor)"
-else
-	PS1+="\[$BPurple\]€$arrowColor"
-fi
-
-PS1+="→ \[$Color_Off\]"
-}
-
-PROMPT_COMMAND="generatePrompt"
-
 export EDITOR=vim
 export VISUAL=$EDITOR
 export PAGER=less
 alias fbmplayer='mplayer -vo fbdev2 -fs -really-quiet'
+alias ls='ls -CF --color=auto'
+alias grep='grep --color=auto'
+
 
 if [ -n "$DISPLAY" ]
 then
@@ -130,7 +133,6 @@ then
 else
         export TERMINAL="fbterm"
         export BROWSER="lynx"
-        alias mplayer='mplayer -vo fbdev2 -fs -really-quiet'
 fi
 
 if [ -r ~/'.bashrc.local' ]; then

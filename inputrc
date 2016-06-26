@@ -17,3 +17,5 @@ set visible-stats on
 
 set revert-all-at-newline on
 
+set editing-mode vi
+
