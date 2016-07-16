@@ -40,6 +40,7 @@ set postponed="+.drafts"
 set sort=threads
 
 set editor=`echo \$EDITOR`
+set beep_new=yes
 
 # Palette for use with the Linux console.  Black background.
 
