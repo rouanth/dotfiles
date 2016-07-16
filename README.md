@@ -13,6 +13,9 @@ Currently available are those:
    * .rtorrent.rc
    * .tmux.conf
    * .vimrc
+   * .config/tox/toxic.conf
+   * .newsbeuter/config
+   * .i3/config
 
 Usage
 -----

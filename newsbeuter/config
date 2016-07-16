@@ -1,0 +1,5 @@
+auto-reload yes
+confirm-exit no
+download-full-page yes
+notify-beep yes
+refresh-on-startup yes

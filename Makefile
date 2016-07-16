@@ -1,4 +1,5 @@
-DOTFILES = bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc
+DOTFILES = bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc \
+	newsbeuter/config config/tox/toxic.conf i3/config
 DIR = $(DESTDIR)${HOME}
 
 INSTALLED_FILES = $(addprefix $(DIR)/., $(DOTFILES))
@@ -11,7 +12,7 @@ $(addprefix $(DIR)/., tmux.local.conf muttrc.local) :
 
 $(DIR)/.% : %
 	@ if [ -e '$@' ] && ! diff -q '$@' '$^' > /dev/null; then \
-	     	mv -v $@ $@.backup; fi
+		mv -v $@ $@.backup; fi
 	@ mkdir -p `dirname $@`
 	@ ln -vsf '$(CURDIR)/$^' '$@'
 
