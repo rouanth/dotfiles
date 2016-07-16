@@ -1,1 +1,12 @@
-OPTIONS=color,standout,use_inverse
+OPTIONS=noautopickup,color,standout,use_inverse
+#        ^             ^      ^       ^
+#        |             |      |       |
+#        |             |      |       permit bold fonts
+#        |             |      |
+#        |             |      highlight monsters and '--More--'
+#        |             |
+#        |             use colored mode
+#        |
+#        stepping on an object doesn't pick it up
+#
+
