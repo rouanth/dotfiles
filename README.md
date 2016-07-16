@@ -33,4 +33,5 @@ machines. Luckily, most of them support modularity of configuration files.
    * .bashrc loads .bashrc.local if it's present
    * .muttrc expects .muttrc.local
    * .tmux.conf expects .tmux.session.conf
+   * .vimrc loads .vimrc.local if it exists and is readable
 

@@ -122,4 +122,11 @@ endfunction
 
 set cino=N-s
 
-set backupdir=~/.vimbackup
+if isdirectory(glob('~/.vimbackup'))
+        set backupdir=~/.vimbackup
+endif
+
+if filereadable(glob('~/.vimrc.local'))
+        source ~/.vimrc.local
+endif
+
