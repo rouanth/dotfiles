@@ -121,10 +121,11 @@ man() {
 export EDITOR=vim
 export VISUAL=$EDITOR
 export PAGER=less
+
 alias fbmplayer='mplayer -vo fbdev2 -fs -really-quiet'
 alias ls='ls -CF --color=auto'
 alias grep='grep --color=auto'
-
+alias eof='grep -q . -- '
 
 if [ -n "$DISPLAY" ]
 then
