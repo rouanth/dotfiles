@@ -86,20 +86,20 @@ On_IWhite='\e[0;107m'   # White
 function generatePrompt {
         ERR=$?
         if [[ "$EUID" -eq 0 ]]; then
-        	arrowColor="\[$BRed\]"
-        	hostColor="\[$Purple\]"
+                arrowColor="\[$BRed\]"
+                hostColor="\[$Purple\]"
         else
-        	arrowColor="\[$BBlue\]"
-        	hostColor="\[$Cyan\]"
+                arrowColor="\[$BBlue\]"
+                hostColor="\[$Cyan\]"
         fi
-        
+
         PS1="$arrowColor( $hostColor\h\[$Color_Off\] : \[$Green\]\W "
         if [[ $ERR = "0" ]]; then
-        	PS1+="$arrowColor)"
+                PS1+="$arrowColor)"
         else
-        	PS1+="\[$BPurple\]€$arrowColor"
+                PS1+="\[$BPurple\]€$arrowColor"
         fi
-        
+
         PS1+="→ \[$Color_Off\]"
 }
 
@@ -108,14 +108,14 @@ PROMPT_COMMAND="generatePrompt"
 ##### ALIASES ################################################################
 
 man() {
-    env LESS_TERMCAP_mb=$'\E[01;31m' \
-    LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-    LESS_TERMCAP_me=$'\E[0m' \
-    LESS_TERMCAP_se=$'\E[0m' \
-    LESS_TERMCAP_so=$'\E[38;5;246m' \
-    LESS_TERMCAP_ue=$'\E[0m' \
-    LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-    man "$@"
+        env LESS_TERMCAP_mb=$'\E[01;31m' \
+                LESS_TERMCAP_md=$'\E[01;38;5;74m' \
+                LESS_TERMCAP_me=$'\E[0m' \
+                LESS_TERMCAP_se=$'\E[0m' \
+                LESS_TERMCAP_so=$'\E[38;5;246m' \
+                LESS_TERMCAP_ue=$'\E[0m' \
+                LESS_TERMCAP_us=$'\E[04;38;5;146m' \
+                man "$@"
 }
 
 export EDITOR=vim
@@ -127,6 +127,10 @@ alias ls='ls -CF --color=auto'
 alias grep='grep --color=auto'
 alias eof='grep -q . -- '
 
+if which sdcv 2> /dev/null > /dev/null; then
+        define() { sdcv -n --color $@ | less -R; }
+fi
+
 if [ -n "$DISPLAY" ]
 then
         export TERMINAL="st"
@@ -135,6 +139,8 @@ else
         export TERMINAL="fbterm"
         export BROWSER="lynx"
 fi
+
+##### LOCAL DEFINITIONS ######################################################
 
 if [ -r ~/'.bashrc.local' ]; then
         . ~/'.bashrc.local'
