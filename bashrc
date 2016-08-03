@@ -85,6 +85,8 @@ On_IWhite='\e[0;107m'   # White
 
 function generatePrompt {
         ERR=$?
+        local arrowColor
+        local hostColor
         if [[ "$EUID" -eq 0 ]]; then
                 arrowColor="\[$BRed\]"
                 hostColor="\[$Purple\]"
