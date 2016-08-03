@@ -29,6 +29,8 @@ macro generic,pager <F1> "<shell-escape> less /usr/share/doc/mutt/manual.txt<Ent
 macro index,pager y "<change-folder>?<toggle-mailboxes>" "show incoming mailboxes list"
 bind browser y exit
 
+set header_cache = ~/.cache/mutt-header
+
 set mbox_type=Maildir
 set folder="~/.mail"
 set mask="^\\.[^.]"
@@ -141,7 +143,6 @@ bind pager <up> previous-line
 bind pager G   bottom
 bind pager L   list-reply
 bind pager P   print-message
-bind pager R   list-reply
 bind pager \cd half-down
 bind pager \ce next-line
 bind pager \cf next-page
@@ -166,6 +167,7 @@ bind index,pager n next-undeleted
 bind index,pager p previous-undeleted
 bind index,pager N next-unread
 bind index,pager P previous-unread
+bind index,pager R group-reply
 # }}}
 
 source ~/.muttrc.local
