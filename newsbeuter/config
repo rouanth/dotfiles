@@ -5,3 +5,4 @@ notify-beep yes
 refresh-on-startup yes
 bind-key A reload-all
 bind-key ^R mark-feed-read
+unbind-key R
