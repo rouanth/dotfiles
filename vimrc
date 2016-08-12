@@ -82,7 +82,8 @@ set iminsert=0
 set imsearch=0
 
 set colorcolumn=79
-set langmap=ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЁ;ABCDEFGHIJKLMNOPQRSTUVWXYZ~,фисвуапршолдьтщзйкыегмцчняё;abcdefghijklmnopqrstuvwxyz`
+set langmap  =ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЁ;ABCDEFGHIJKLMNOPQRSTUVWXYZ~
+set langmap +=фисвуапршолдьтщзйкыегмцчняё;abcdefghijklmnopqrstuvwxyz`
 set number
 
 set wildmenu
@@ -123,6 +124,8 @@ function! VisualSelection(direction, extra_filter) range
 endfunction
 
 set cino=N-s
+
+set foldcolumn=2
 
 if isdirectory(glob('~/.vimbackup'))
         set backupdir=~/.vimbackup
