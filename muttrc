@@ -37,9 +37,9 @@ set beep_new=yes
 
 # Palette for use with the Linux console.  Black background.
 
-color hdrdefault blue black
-color quoted     blue black
-color signature  blue black
+color hdrdefault brightblue black
+color quoted     cyan black
+color signature  magenta black
 color attachment red black
 color message    green black
 color error      brightred black
