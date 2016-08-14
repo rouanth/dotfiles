@@ -22,6 +22,8 @@ bind browser y exit
 # Caching mutt headers to speed up loading of a mailbox
 set header_cache = ~/.cache/mutt-header
 
+set use_envelope_from = yes
+
 set mbox_type=Maildir
 set folder="~/.mail"
 set mask="^\\.[^.]"
