@@ -9,77 +9,77 @@ fi
 ##### COLOR LIST #############################################################
 
 # Reset
-Color_Off='\e[0m'       # Text Reset
+Color_Off='\e[0m'
 
 # Regular Colors
-Black='\e[0;30m'        # Black
-Red='\e[0;31m'          # Red
-Green='\e[0;32m'        # Green
-Yellow='\e[0;33m'       # Yellow
-Blue='\e[0;34m'         # Blue
-Purple='\e[0;35m'       # Purple
-Cyan='\e[0;36m'         # Cyan
-White='\e[0;37m'        # White
+Black='\e[0;30m'
+Red='\e[0;31m'
+Green='\e[0;32m'
+Yellow='\e[0;33m'
+Blue='\e[0;34m'
+Purple='\e[0;35m'
+Cyan='\e[0;36m'
+White='\e[0;37m'
 
 # Bold
-BBlack='\e[1;30m'       # Black
-BRed='\e[1;31m'         # Red
-BGreen='\e[1;32m'       # Green
-BYellow='\e[1;33m'      # Yellow
-BBlue='\e[1;34m'        # Blue
-BPurple='\e[1;35m'      # Purple
-BCyan='\e[1;36m'        # Cyan
-BWhite='\e[1;37m'       # White
+BBlack='\e[1;30m'
+BRed='\e[1;31m'
+BGreen='\e[1;32m'
+BYellow='\e[1;33m'
+BBlue='\e[1;34m'
+BPurple='\e[1;35m'
+BCyan='\e[1;36m'
+BWhite='\e[1;37m'
 
 # Underline
-UBlack='\e[4;30m'       # Black
-URed='\e[4;31m'         # Red
-UGreen='\e[4;32m'       # Green
-UYellow='\e[4;33m'      # Yellow
-UBlue='\e[4;34m'        # Blue
-UPurple='\e[4;35m'      # Purple
-UCyan='\e[4;36m'        # Cyan
-UWhite='\e[4;37m'       # White
+UBlack='\e[4;30m'
+URed='\e[4;31m'
+UGreen='\e[4;32m'
+UYellow='\e[4;33m'
+UBlue='\e[4;34m'
+UPurple='\e[4;35m'
+UCyan='\e[4;36m'
+UWhite='\e[4;37m'
 
 # Background
-On_Black='\e[40m'       # Black
-On_Red='\e[41m'         # Red
-On_Green='\e[42m'       # Green
-On_Yellow='\e[43m'      # Yellow
-On_Blue='\e[44m'        # Blue
-On_Purple='\e[45m'      # Purple
-On_Cyan='\e[46m'        # Cyan
-On_White='\e[47m'       # White
+On_Black='\e[40m'
+On_Red='\e[41m'
+On_Green='\e[42m'
+On_Yellow='\e[43m'
+On_Blue='\e[44m'
+On_Purple='\e[45m'
+On_Cyan='\e[46m'
+On_White='\e[47m'
 
 # High Intensity
-IBlack='\e[0;90m'       # Black
-IRed='\e[0;91m'         # Red
-IGreen='\e[0;92m'       # Green
-IYellow='\e[0;93m'      # Yellow
-IBlue='\e[0;94m'        # Blue
-IPurple='\e[0;95m'      # Purple
-ICyan='\e[0;96m'        # Cyan
-IWhite='\e[0;97m'       # White
+IBlack='\e[0;90m'
+IRed='\e[0;91m'
+IGreen='\e[0;92m'
+IYellow='\e[0;93m'
+IBlue='\e[0;94m'
+IPurple='\e[0;95m'
+ICyan='\e[0;96m'
+IWhite='\e[0;97m'
 
 # Bold High Intensity
-BIBlack='\e[1;90m'      # Black
-BIRed='\e[1;91m'        # Red
-BIGreen='\e[1;92m'      # Green
-BIYellow='\e[1;93m'     # Yellow
-BIBlue='\e[1;94m'       # Blue
-BIPurple='\e[1;95m'     # Purple
-BICyan='\e[1;96m'       # Cyan
-BIWhite='\e[1;97m'      # White
+BIBlack='\e[1;90m'
+BIRed='\e[1;91m'
+BIGreen='\e[1;92m'
+BIYellow='\e[1;93m'
+BIBlue='\e[1;94m'
+BIPurple='\e[1;95m'
+BICyan='\e[1;96m'
+BIWhite='\e[1;97m'
 
 # High Intensity backgrounds
-On_IBlack='\e[0;100m'   # Black
-On_IRed='\e[0;101m'     # Red
-On_IGreen='\e[0;102m'   # Green
-On_IYellow='\e[0;103m'  # Yellow
-On_IBlue='\e[0;104m'    # Blue
-On_IPurple='\e[0;105m'  # Purple
-On_ICyan='\e[0;106m'    # Cyan
-On_IWhite='\e[0;107m'   # White
+On_IBlack='\e[0;100m'
+On_IRed='\e[0;101m'
+On_IGreen='\e[0;102m'
+On_IYellow='\e[0;103m'
+On_IBlue='\e[0;104m'
+On_IPurple='\e[0;105m'
+On_ICyan='\e[0;106m'
+On_IWhite='\e[0;107m'
 
 ##### PROMPT #################################################################
 
@@ -107,39 +107,52 @@ function generatePrompt {
 
 PROMPT_COMMAND="generatePrompt"
 
-##### ALIASES ################################################################
+##### SENSIBLE UTILITIES #####################################################
 
-man() {
-        env LESS_TERMCAP_mb=$'\E[01;31m' \
-                LESS_TERMCAP_md=$'\E[01;38;5;74m' \
-                LESS_TERMCAP_me=$'\E[0m' \
-                LESS_TERMCAP_se=$'\E[0m' \
-                LESS_TERMCAP_so=$'\E[38;5;246m' \
-                LESS_TERMCAP_ue=$'\E[0m' \
-                LESS_TERMCAP_us=$'\E[04;38;5;146m' \
-                man "$@"
+sensible() {
+        local p
+        for p in "$@"; do
+                if type $(printf "%s" "$p" | cut -d' ' -f1) > /dev/null 2>&1
+                then
+                       printf "%s" "$p"
+                       return 0
+               fi
+       done
+       return 1
 }
 
-export EDITOR=vim
-export VISUAL=$EDITOR
-export PAGER=less
+export PAGER=$(sensible less more cat)
+export VISUAL=$(sensible nvim vim vi 'emacs -nw' nano)
+
+if [ -n "$DISPLAY" ]
+then
+        export TERMINAL="$(sensible st urxvt xterm)"
+        export BROWSER="$(sensible qutebrowser firefox iceweasel)"
+else
+        export TERMINAL="fbterm"
+        export BROWSER="$(sensible lynx elinks links)"
+fi
+
+##### ALIASES ################################################################
+
+
+alias man="env \
+        LESS_TERMCAP_mb='$(printf "$IPurple")' \
+        LESS_TERMCAP_md='$(printf "$BYellow")' \
+        LESS_TERMCAP_me='$(printf "$Color_Off")' \
+        LESS_TERMCAP_se='$(printf "$Color_Off")' \
+        LESS_TERMCAP_so='$(printf "$On_IBlue")' \
+        LESS_TERMCAP_ue='$(printf "$Color_Off")' \
+        LESS_TERMCAP_us='$(printf "$UCyan")' \
+        man"
 
 alias fbmplayer='mplayer -vo fbdev2 -fs -really-quiet'
 alias ls='ls -CF --color=auto'
 alias grep='grep --color=auto'
 alias eof='grep -q . -- '
 
-if which sdcv 2> /dev/null > /dev/null; then
-        define() { sdcv -n --color $@ | less -R; }
-fi
-
-if [ -n "$DISPLAY" ]
-then
-        export TERMINAL="st"
-        export BROWSER="qutebrowser"
-else
-        export TERMINAL="fbterm"
-        export BROWSER="lynx"
+if type sdcv 2> /dev/null > /dev/null; then
+        define() { sdcv -n --color "$@" | less -R; }
 fi
 
 ##### LOCAL DEFINITIONS ######################################################
