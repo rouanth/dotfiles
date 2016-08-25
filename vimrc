@@ -125,8 +125,6 @@ endfunction
 
 set cino=N-s
 
-set foldcolumn=2
-
 if isdirectory(glob('~/.vimbackup'))
         set backupdir=~/.vimbackup
 endif
