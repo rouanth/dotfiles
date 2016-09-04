@@ -1,5 +1,5 @@
 DOTFILES = bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc \
-	newsbeuter/config config/tox/toxic.conf i3/config
+	config/newsbeuter/config config/tox/toxic.conf i3/config
 DIR = $(DESTDIR)${HOME}
 
 INSTALLED_FILES = $(addprefix $(DIR)/., $(DOTFILES))
