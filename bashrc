@@ -121,7 +121,7 @@ sensible() {
        return 1
 }
 
-export PAGER=$(sensible less more cat)
+export PAGER=$(sensible 'less -iR' more cat)
 export VISUAL=$(sensible nvim vim vi 'emacs -nw' nano)
 
 if [ -n "$DISPLAY" ]
