@@ -34,8 +34,10 @@ set record="+.sent"
 set postponed="+.drafts"
 set sort=threads
 
-set editor=`echo \$EDITOR`
+set editor=`echo \$VISUAL`
 set beep_new=yes
+
+set include=yes
 
 # Palette for use with the Linux console.  Black background.
 
