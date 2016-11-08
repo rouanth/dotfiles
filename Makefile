@@ -1,5 +1,9 @@
+LOCAL_FILES = 
+
 DOTFILES = bashrc lynxrc muttrc nethackrc rtorrent.rc tmux.conf vimrc inputrc \
-	config/newsbeuter/config config/tox/toxic.conf i3/config
+	config/newsbeuter/config config/tox/toxic.conf i3/config vimperatorrc \
+	config/user-dirs.dirs $(LOCAL_FILES)
+
 DIR = $(DESTDIR)${HOME}
 
 INSTALLED_FILES = $(addprefix $(DIR)/., $(DOTFILES))
