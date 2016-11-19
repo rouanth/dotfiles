@@ -1,6 +1,5 @@
 #
-# System configuration file for Mutt
-#
+# System configuration file for Mutt #
 
 # Default list of header fields to weed when displaying.
 # Ignore all lines by default...
@@ -23,6 +22,7 @@ bind browser y exit
 set header_cache = ~/.cache/mutt-header
 
 set use_envelope_from = yes
+set reverse_name = yes
 
 set mbox_type=Maildir
 set folder="~/.mail"
