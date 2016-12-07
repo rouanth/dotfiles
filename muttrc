@@ -26,12 +26,12 @@ set reverse_name = yes
 
 set mbox_type=Maildir
 set folder="~/.mail"
-set mask="^\\.[^.]"
-set mbox="~/.mail"
-set spoolfile="~/.mail"
+set mask="^[^.]"
+set mbox="~/.mail/general"
+set spoolfile="~/.mail/general"
 
-set record="+.sent"
-set postponed="+.drafts"
+set record="+sent"
+set postponed="+drafts"
 set sort=threads
 
 set editor=`echo \$VISUAL`
