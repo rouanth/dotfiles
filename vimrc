@@ -82,8 +82,6 @@ set iminsert=0
 set imsearch=0
 
 set colorcolumn=79
-set langmap  =ФИСВУАПРШОЛДЬТЩЗЙКЫЕГМЦЧНЯЁ;ABCDEFGHIJKLMNOPQRSTUVWXYZ~
-set langmap +=фисвуапршолдьтщзйкыегмцчняё;abcdefghijklmnopqrstuvwxyz`
 set number
 
 set wildmenu
