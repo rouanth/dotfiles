@@ -32,6 +32,9 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
+# start a terminal
+bindsym $mod+Z exec swaylock
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -131,9 +134,9 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-bindsym XF86AudioRaiseVolume exec amixer --quiet set PCM 3+
-bindsym XF86AudioLowerVolume exec amixer --quiet set PCM 3-
-bindsym XF86AudioToggle exec amixer --quiet set PCM toggle
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +5%
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -5%
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessDown exec light -U 3
 bindsym XF86MonBrightnessUp exec light -A 3
 

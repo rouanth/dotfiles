@@ -122,12 +122,12 @@ sensible() {
 }
 
 export PAGER=$(sensible 'less -iR' more cat)
-export VISUAL=$(sensible nvim vim vi 'emacs -nw' nano)
+export VISUAL=$(sensible kak nvim vim vi 'emacs -nw' nano)
 
 if [ -n "$DISPLAY" ]
 then
-        export TERMINAL="$(sensible st urxvt xterm)"
-        export BROWSER="$(sensible qutebrowser firefox iceweasel)"
+        export TERMINAL="$(sensible alacritty st urxvt xterm)"
+        export BROWSER="$(sensible iceweasel firefox qutebrowser)"
 else
         export TERMINAL="fbterm"
         export BROWSER="$(sensible lynx elinks links)"
