@@ -1,6 +1,7 @@
 LOCAL_FILES = 
 
 DOTFILES = \
+	XCompose \
 	bashrc \
 	lynxrc \
 	muttrc \
