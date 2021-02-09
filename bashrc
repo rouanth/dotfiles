@@ -137,6 +137,29 @@ else
         export BROWSER="$(sensible lynx elinks links)"
 fi
 
+PATH="$HOME/.local/bin:$PATH"
+
+##### HELPER FUNCTIONS #######################################################
+
+texwatch() {
+  x="$1"
+  if [ ! -f "$x" -a ! -f "$x.tex" -a ! -f "$x.pdf" ]; then
+    echo "Not a file: $x" >&2
+    return
+  fi
+  [ "${x##*.}" != pdf -a "${x##*.}" != tex ] || x="${x%.*}"
+  zathura "${x}.pdf" &
+  while true; do
+    inotifywait -e MODIFY "${x}.tex"
+    if [ -f Makefile ]
+    then
+      make
+    else
+      pdflatex -shell-escape "${x}.tex"
+    fi
+  done
+}
+
 ##### ALIASES ################################################################
 
 
@@ -159,15 +182,13 @@ if type sdcv 2> /dev/null > /dev/null; then
         define() { sdcv -n --color "$@" | less -R; }
 fi
 
+alias run_presentation_console='(pixelsize=24;
+	urxvt  	-fn "xft:DejaVu Sans Mono:pixelsize="$pixelsize \
+		-fb "xft:DejaVu Sans Mono:bold:pixelsize="$pixelsize \
+		-fg white -bg black -e env bash --norc --noprofile)'
+
 ##### LOCAL DEFINITIONS ######################################################
 
 if [ -r ~/'.bashrc.local' ]; then
         . ~/'.bashrc.local'
 fi
-
-PATH="$HOME/.local/bin:$PATH"
-
-alias run_presentation_console='(pixelsize=24;
-	urxvt  	-fn "xft:DejaVu Sans Mono:pixelsize="$pixelsize \
-		-fb "xft:DejaVu Sans Mono:bold:pixelsize="$pixelsize \
-		-fg white -bg black -e env bash --norc --noprofile)'
