@@ -1,0 +1,19 @@
+eval %sh{kak-lsp --kakoune -s $kak_session}
+hook global WinSetOption filetype=(rust|haskell|c|cpp|latex) %{
+    lsp-enable-window
+}
+
+hook global WinSetOption filetype=rust %{
+    set buffer formatcmd 'rustfmt'
+}
+
+hook global WinSetOption filetype=haskell %{
+    set buffer lintcmd 'hlint'
+}
+
+hook global WinSetOption filetype=mail %{
+    set buffer autowrap_column 72
+    autowrap-enable
+}
+
+addhl global/ column 80 default,rgb:404040
