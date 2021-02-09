@@ -1,3 +1,7 @@
+if [ -z "${TMUX:-}" ] && which tmux 2> /dev/null; then
+	tmux
+fi
+
 if [ -f /usr/share/bash-completion/bash_completion ]; then
         . /usr/share/bash-completion/bash_completion
 fi
@@ -161,3 +165,9 @@ if [ -r ~/'.bashrc.local' ]; then
         . ~/'.bashrc.local'
 fi
 
+PATH="$HOME/.local/bin:$PATH"
+
+alias run_presentation_console='(pixelsize=24;
+	urxvt  	-fn "xft:DejaVu Sans Mono:pixelsize="$pixelsize \
+		-fb "xft:DejaVu Sans Mono:bold:pixelsize="$pixelsize \
+		-fg white -bg black -e env bash --norc --noprofile)'

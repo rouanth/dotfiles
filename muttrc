@@ -59,7 +59,7 @@ color index      red black "~N|~O"
 
 # Receive the new mail
 
-macro index,pager A '!fetchmail<enter>'
+macro index,pager A '!getmail<enter>'
 
 # Vim-like keybindings
 
@@ -80,11 +80,13 @@ bind browser G  bottom-page
 bind browser <Enter> view-file
 bind browser A check-new
 
+bind index g  noop
 bind index gg first-entry
 bind index G  last-entry
 bind index ~  set-flag
 bind index i  mail
 
+bind pager g   noop
 bind pager gg  top
 bind pager G   bottom
 bind pager j   next-line
