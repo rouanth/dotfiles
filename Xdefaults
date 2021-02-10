@@ -8,5 +8,24 @@ URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=10:antialias=false:hinting=true
 URxvt*foreground: white
 URxvt*background: black
 URxvt*scrollBar: false
+URxvt*scrollTtyKeypress: true
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: false
+URxvt*secondaryScreen: true
+URxvt*secondaryScroll: true
+URxvt*skipScroll: true
+URxvt*scrollBar_right: false
+URxvt*scrollBar_floating: false
+URxvt*fading: 30
+URxvt*utmpInhibit: false
+URxvt*urgentOnBell: false
+URxvt*visualBell: true
+URxvt*mapAlert: true
+URxvt*mouseWheelScrollPage: false
+URxvt*colorUL: yellow
+URxvt*underlineColor: yellow
+URxvt*saveLines: 0
+URxvt*buffered: true
+URxvt*hold: false
 
 Xft.dpi: 125

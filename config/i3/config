@@ -135,9 +135,9 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 bindsym XF86AudioRaiseVolume exec pactl set-sink-volume \
-         $(pactl info | grep 'Default Sink: ' | cut -d: -f2) +3%
+         $(pactl info | grep 'Default Sink: ' | cut -d: -f2) +5%
 bindsym XF86AudioLowerVolume exec pactl set-sink-volume \
-         $(pactl info | grep 'Default Sink: ' | cut -d: -f2) -3%
+         $(pactl info | grep 'Default Sink: ' | cut -d: -f2) -5%
 bindsym XF86AudioMute exec pactl set-sink-mute \
          $(pactl info | grep 'Default Sink: ' | cut -d: -f2) toggle
 bindsym XF86MonBrightnessDown exec brightnessctl s 3%-

@@ -113,6 +113,8 @@ PROMPT_COMMAND="generatePrompt"
 
 ##### SENSIBLE UTILITIES #####################################################
 
+set -e
+
 sensible() {
         local p
         for p in "$@"; do
@@ -125,8 +127,12 @@ sensible() {
        return 1
 }
 
-export PAGER=$(sensible 'less -iR' more cat)
-export VISUAL=$(sensible kak nvim vim vi 'emacs -nw' nano)
+PAGER=$(sensible 'less -iR' more cat)
+VISUAL=$(sensible kak nvim vim vi 'emacs -nw' nano)
+EDITOR=$VISUAL
+export PAGER
+export VISUAL
+export EDITOR
 
 if [ -n "$DISPLAY" ]
 then
@@ -231,3 +237,5 @@ fi
 if [ -r ~/'.bashrc.local' ]; then
         . ~/'.bashrc.local'
 fi
+
+set +e

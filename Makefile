@@ -3,6 +3,7 @@ LOCAL_FILES =
 DOTFILES = \
 	XCompose \
 	bashrc \
+	ncmpcpp \
 	lynxrc \
 	muttrc \
 	nethackrc \

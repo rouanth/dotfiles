@@ -21,4 +21,3 @@ set editing-mode vi
 
 set vi-cmd-mode-string ":"
 set vi-ins-mode-string "+"
-
