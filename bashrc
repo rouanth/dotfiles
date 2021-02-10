@@ -162,7 +162,6 @@ texwatch() {
 
 ##### ALIASES ################################################################
 
-
 alias man="env \
         LESS_TERMCAP_mb='$(printf "$IPurple")' \
         LESS_TERMCAP_md='$(printf "$BYellow")' \
@@ -186,6 +185,46 @@ alias run_presentation_console='(pixelsize=24;
 	urxvt  	-fn "xft:DejaVu Sans Mono:pixelsize="$pixelsize \
 		-fb "xft:DejaVu Sans Mono:bold:pixelsize="$pixelsize \
 		-fg white -bg black -e env bash --norc --noprofile)'
+
+##### FIXING XDG INCOMPATIBILITY #############################################
+# See https://wiki.archlinux.org/index.php/XDG_Base_Directory
+
+XDG_CONFIG_HOME=${XDG_CONFIG_HOME:-$HOME/.config}
+XDG_DATA_HOME=${XDG_DATA_HOME:-$HOME/.local/share}
+
+if type abook 2> /dev/null > /dev/null; then
+	alias abook='abook \
+		--config "$XDG_CONFIG_HOME"/abook/abookrc \
+		--datafile "$XDG_DATA_HOME"/abook/addressbook'
+fi
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+export STACK_ROOT="$XDG_DATA_HOME"/stack
+
+if type gcalcli 2> /dev/null > /dev/null; then
+	alias gcalcli='gcalcli --configFolder ~/.config/gcalcli'
+fi
+
+if type less 2> /dev/null > /dev/null; then
+	alias less='LESSHISTFILE=- less'
+fi
+
+export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
+
+export LEDGER_FILE="$XDG_DATA_HOME"/hledger.journal
+
+if type ipython 2> /dev/null > /dev/null; then
+	export IPYTHONDIR="$XDG_CONFIG_HOME"/jupyter
+	export JUPYTER_CONFIG_DIR="$XDG_CONFIG_HOME"/jupyter
+fi
+
+if type java 2> /dev/null > /dev/null; then
+	export _JAVA_OPTIONS=-Djava.util.prefs.userRoot="$XDG_CONFIG_HOME"/java
+fi
+
+if type mednafen 2> /dev/null > /dev/null; then
+	export MEDNAFEN_HOME="$XDG_CONFIG_HOME"/mednafen
+fi
 
 ##### LOCAL DEFINITIONS ######################################################
 
