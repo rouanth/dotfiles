@@ -144,6 +144,9 @@ else
 fi
 
 PATH="$HOME/.local/bin:$PATH"
+if [ -d "$HOME/.opam/default/bin" ]; then
+	PATH=$PATH:$HOME/.opam/default/bin
+fi
 
 ##### HELPER FUNCTIONS #######################################################
 
