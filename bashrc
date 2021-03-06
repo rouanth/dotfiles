@@ -185,6 +185,7 @@ alias fbmplayer='mplayer -vo fbdev2 -fs -really-quiet'
 alias ls='ls -CF --color=auto'
 alias grep='grep --color=auto'
 alias eof='grep -q . -- '
+duh() { du -hd 1 --all "$@" | sort -h; }
 
 if type sdcv 2> /dev/null > /dev/null; then
         define() { sdcv -n --color "$@" | less -R; }
