@@ -221,6 +221,8 @@ fi
 
 export GRADLE_USER_HOME="$XDG_DATA_HOME"/gradle
 
+export GOPATH="$XDG_DATA_HOME"/go
+
 export LEDGER_FILE="$XDG_DATA_HOME"/hledger.journal
 
 if type ipython 2> /dev/null > /dev/null; then
