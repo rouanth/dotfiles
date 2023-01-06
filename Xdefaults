@@ -1,10 +1,10 @@
-xterm*faceName: DejaVu Sans Mono:size=10:antialias=false:hinting=true
+xterm*faceName: IBM Plex Mono:size=10:antialias=false:hinting=true
 xterm*foreground: white
 xterm*background: black
 xterm*saveLines: 2500
 
-URxvt*font: xft:DejaVu Sans Mono:size=10:antialias=false:hinting=true
-URxvt*boldFont: xft:DejaVu Sans Mono:bold:size=10:antialias=false:hinting=true
+URxvt*font: xft:IBM Plex Mono:size=10:antialias=true:hinting=true
+URxvt*boldFont: xft:IBM Plex Mono:bold:size=10:antialias=true:hinting=true
 URxvt*foreground: white
 URxvt*background: black
 URxvt*scrollBar: false
@@ -27,5 +27,3 @@ URxvt*underlineColor: yellow
 URxvt*saveLines: 0
 URxvt*buffered: true
 URxvt*hold: false
-
-Xft.dpi: 125
