@@ -1,7 +1,6 @@
 eval %sh{kak-lsp --kakoune -s $kak_session}
-hook global WinSetOption filetype=(rust|haskell|c|cpp|latex) %{
-    lsp-enable-window
-}
+
+hook global WinSetOption filetype=(rust|haskell|c|cpp|latex) lsp-enable-window
 
 hook global WinSetOption filetype=rust %{
     set buffer formatcmd 'rustfmt'
@@ -16,4 +15,16 @@ hook global WinSetOption filetype=mail %{
     autowrap-enable
 }
 
+hook global BufNewFile .*\.hs %{
+    evaluate-commands %sh{
+        file="${kak_buffile##*/src/}"
+        if [ "$file" != "${kak_buffile}" ]; then
+            name=$(printf "%s\n" "${file%%.hs}" | tr '/' '.')
+            echo "execute-keys imodule<space>${name}<space>where"
+        fi
+    }
+}
+
 addhl global/ column 80 default,rgb:404040
+
+map global user l %{: enter-user-mode lsp<ret>} -docstring "LSP mode"
