@@ -12,12 +12,7 @@ DOTFILES = \
 	vimrc \
 	inputrc \
 	config/newsbeuter/config \
-	config/tox/toxic.conf \
-	config/i3/config \
-	vimperatorrc \
 	config/user-dirs.dirs \
-	config/kak/kakrc \
-	config/kak-lsp/kak-lsp.toml \
 	Xdefaults \
 	$(LOCAL_FILES)
 
