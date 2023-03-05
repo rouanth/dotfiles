@@ -13,7 +13,7 @@
         enable = true;
         config = rec {
             modifier = "Mod4";
-            terminal = "foot";
+            terminal = "${pkgs.foot}/bin/footclient";
             startup = [
                 {command = "/usr/lib/geoclue-2.0/demos/agent";}
                 {command = "${pkgs.mako}/bin/mako";}
@@ -49,8 +49,9 @@
             };
         };
         extraConfig = ''
-            exec --no-startup-id alacritty --config-file ~/.config/alacritty/scratchterm.yml -t scratchterm
-            for_window [title="scratchterm"] move container to scratchpad
+            exec --no-startup-id ${pkgs.foot}/bin/foot -s
+            exec --no-startup-id ${pkgs.foot}/bin/foot --config=$HOME/.config/foot_scratchterm.ini -T ScratchTermName
+            for_window [title="ScratchTermName"] floating enable, sticky enable, resize set 100 ppt 60 ppt, move absolute position 0 0, move container to scratchpad
             output "*" bg /home/rouanth/Private/wallpaper.jpg fill
         '';
     };

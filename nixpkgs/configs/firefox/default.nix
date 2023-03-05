@@ -5,6 +5,7 @@
              inherit pkgs;
          };
     };
+    programs.browserpass.enable = true;
     programs.firefox = {
         enable = true;
         extensions = with pkgs.nur.repos.rycee.firefox-addons; [
@@ -12,12 +13,23 @@
             tridactyl
             buster-captcha-solver
             tree-style-tab
+            search-by-image
             return-youtube-dislikes
             browserpass
+            libredirect
+            terms-of-service-didnt-read
+            # sponsorblock
             # enhancer-for-youtube
+            # fastforward
+            # furiganaize
+            # native-mathml
             old-reddit-redirect
             # ReviewMeta
             # Universal Bypass
+            don-t-fuck-with-paste
+            redirector
+            consent-o-matic
+            localcdn
         ];
         profiles.default = {
             id = 0;
@@ -25,6 +37,12 @@
             search = {
                 default = "DuckDuckGo";
             };
+            userContent = ''
+                /* hides the native tabs */
+                #TabsToolbar {
+                  visibility: collapse;
+                }
+            '';
         };
     };
 }

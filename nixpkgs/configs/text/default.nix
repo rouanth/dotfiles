@@ -6,6 +6,7 @@
         abook
         aspellDicts.ru
         aspellDicts.en
+        languagetool
         dos2unix
         sdcv
     ];

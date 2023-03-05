@@ -24,6 +24,8 @@
         rmlint
         findimagedupes
         instaloader
+        android-tools
+        android-file-transfer
     ];
     nixpkgs.config.allowUnfree = true;
 }

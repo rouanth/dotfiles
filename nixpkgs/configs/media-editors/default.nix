@@ -5,6 +5,6 @@
         audacity
         libreoffice
         inkscape
-        sonic-visualiser
+        # sonic-visualiser
     ];
 }
