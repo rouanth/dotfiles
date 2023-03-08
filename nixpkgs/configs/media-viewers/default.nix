@@ -3,7 +3,7 @@
     home.packages = with pkgs; [
         mpv
         zathura
-        imv
+        swayimg
         yt-dlp
         koreader
     ];
