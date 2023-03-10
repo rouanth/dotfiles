@@ -11,8 +11,11 @@ DOTFILES = \
 	tmux.conf \
 	vimrc \
 	inputrc \
-	config/newsbeuter/config \
 	config/user-dirs.dirs \
+	config/foot/foot.ini \
+	config/foot_scratchterm.ini \
+	config/i3status-rust/config.toml \
+	config/newsboat/config \
 	Xdefaults \
 	$(LOCAL_FILES)
 
