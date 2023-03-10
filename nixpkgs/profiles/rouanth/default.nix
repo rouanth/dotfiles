@@ -18,6 +18,7 @@
         ../../configs/file-browser
     ];
     home.packages = with pkgs; [
+        yubikey-personalization-gui
         tagainijisho
         newsboat
         neomutt

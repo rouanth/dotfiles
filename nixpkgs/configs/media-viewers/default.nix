@@ -5,6 +5,7 @@
         zathura
         swayimg
         yt-dlp
+        streamlink
         koreader
     ];
 }
