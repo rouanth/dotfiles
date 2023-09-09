@@ -8,7 +8,7 @@
     programs.browserpass.enable = true;
     programs.firefox = {
         enable = true;
-        extensions = with pkgs.nur.repos.rycee.firefox-addons; [
+        profiles.default.extensions = with pkgs.nur.repos.rycee.firefox-addons; [
             ublock-origin
             tridactyl
             buster-captcha-solver
@@ -18,6 +18,8 @@
             browserpass
             libredirect
             terms-of-service-didnt-read
+            ublacklist
+            dearrow
             # sponsorblock
             # enhancer-for-youtube
             # fastforward

@@ -244,4 +244,7 @@ if [ -r ~/'.bashrc.local' ]; then
         . ~/'.bashrc.local'
 fi
 
+shopt -s histappend
+PROMPT_COMMAND="history -a;$PROMPT_COMMAND"
+
 set +e

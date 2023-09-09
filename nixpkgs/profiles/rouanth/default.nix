@@ -5,7 +5,7 @@
         ../../configs/programming/haskell
         ../../configs/kakoune
         ../../configs/firefox
-        ../../configs/latex
+        # ../../configs/latex
         ../../configs/text
         ../../configs/downloaders
         # ../../configs/games
@@ -27,6 +27,8 @@
         instaloader
         android-tools
         android-file-transfer
+        wine
+        steam-tui
     ];
     nixpkgs.config.allowUnfree = true;
 }

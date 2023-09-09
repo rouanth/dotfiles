@@ -1,6 +1,6 @@
 { config, pkgs, lib, ... }:
 {
-    programs.mako.enable = true;
+    services.mako.enable = true;
     services.gammastep = {
         enable = true;
         temperature = {
@@ -23,7 +23,8 @@
             }];
             input = {
                 "type:keyboard" = {
-                    xkb_layout = "dvorak,ru";
+                    xkb_layout = "us,ru";
+                    xkb_variant = "dvorak,";
                     xkb_options = "grp:win_space_toggle,ctrl:nocaps,grp_led:caps,compose:rctrl";
                 };
             };
