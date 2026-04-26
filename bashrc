@@ -99,7 +99,7 @@ function generatePrompt {
                 hostColor="\[$Cyan\]"
         fi
 
-        PS1="$arrowColor( $hostColor\h\[$Color_Off\] : \[$Green\]\W "
+        PS1="$arrowColor( $hostColor\u\[$Color_Off\] : \[$Green\]\W "
         if [[ $ERR = "0" ]]; then
                 PS1+="$arrowColor)"
         else
